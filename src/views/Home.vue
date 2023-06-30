@@ -1,8 +1,9 @@
 <template>
-  <p>Home view</p>
+  <p>Home view</p> 
 </template>
 
 <script>
+
 </script>
 
 <style>
