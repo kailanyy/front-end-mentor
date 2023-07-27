@@ -1,7 +1,10 @@
 <template>
-  <div v-if="subscribed === false" class="bg-newsletter-charcoal-grey h-full w-full flex justify-center items-center">
-    <div class="bg-newsletter-white rounded-3xl p-4 flex items-stretch">
-      <div class="max-w-sm p-8">
+  <div v-if="subscribed === false"
+    class="md:bg-newsletter-charcoal-grey md:h-full md:w-full flex justify-center md:items-center flex-col">
+    <img class="block md:hidden rounded-2xl w-full max-w-lg self-center"
+      src="@/assets/NewsletterSignUpForm/images/illustration-sign-up-mobile.svg">
+    <div class="bg-newsletter-white rounded-3xl md:p-4 flex flex-col-reverse md:flex-row md:items-stretch items-center">
+      <div class="max-w-lg p-8">
         <h1 class="text-newsletter-charcoal-grey text-5xl mb-4 font-bold font-roboto">Stay updated!</h1>
         <p class="mb-4">Join 60,000+ product managers receiving monthly updates on:</p>
         <ul>
@@ -14,8 +17,8 @@
           <h1 class="font-semibold">
             Email address
           </h1>
-          <div class="input-errors" v-for="error of v$.email.$errors" :key="error.$uid">
-            <div class="error-msg text-newsletter-tomato">{{ error.$message }}</div>
+          <div class="input-errors" v-if="v$.email.$errors.length">
+            <div class="error-msg text-newsletter-tomato">{{ v$.email.$errors[0].$message }}</div>
           </div>
         </div>
 
@@ -31,12 +34,13 @@
         </button>
       </div>
       <div>
-        <img  src="@/assets/NewsletterSignUpForm/images/illustration-sign-up-desktop.svg">
+        <img class="hidden md:block" src="@/assets/NewsletterSignUpForm/images/illustration-sign-up-desktop.svg">
+        <!-- <img class="block md:hidden rounded-2xl" src="@/assets/NewsletterSignUpForm/images/illustration-sign-up-mobile.svg"> -->
       </div>
     </div>
   </div>
   <template v-else>
-    <NewsletterSuccess :email="state.email" />
+    <NewsletterSuccess :email="state.email" @dismiss="subscribed = false" />
   </template>
 </template>
 
@@ -52,18 +56,20 @@ export default {
   },
 
   setup() {
-
     const subscribed = ref(false);
 
     const state = reactive({
-      props: {
-        email: ''
-      }
+      email: ''
     })
 
     const rules = computed(() => {
       return {
-        email: { required: helpers.withMessage('Valid email required', required) }
+        email: {
+          required: helpers.withMessage('Please insert your email below', required),
+          emailPattern: helpers.withMessage('Invalid email format', (value) =>
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
+          )
+        },
       }
     })
 
@@ -76,11 +82,16 @@ export default {
     ])
 
     async function subscribe() {
-      await v$.value.$validate();
+      // não valido = true
+      // valido = false
+      const invalid = await v$.value.$validate().then(valid /* true ou false */ => valid === false)
+
+      if (invalid) return;
+
       subscribed.value = true
     }
 
-    return { subscribe, subscribed, state, v$, items, NewsletterSuccess, email }
+    return { subscribe, subscribed, state, v$, items, email }
   }
 }
 
