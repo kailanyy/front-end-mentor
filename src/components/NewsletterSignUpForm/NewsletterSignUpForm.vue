@@ -82,8 +82,6 @@ export default {
     ])
 
     async function subscribe() {
-      // não valido = true
-      // valido = false
       const invalid = await v$.value.$validate().then(valid /* true ou false */ => valid === false)
 
       if (invalid) return;
