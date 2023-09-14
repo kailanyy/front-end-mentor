@@ -3,13 +3,11 @@
 
 <template>
   <div>
-    <!-- <router-link :to="{name: 'home'}">home</router-link>
-    <router-link :to="{name: 'about'}">about</router-link> -->
   </div>
-  <router-view /> <!-- <Home /> -->
+  <router-view />
 </template>
 
-<style scoped>
+<style>
 @font-face {
   font-family: "Roboto";
   src: local("Roboto"),

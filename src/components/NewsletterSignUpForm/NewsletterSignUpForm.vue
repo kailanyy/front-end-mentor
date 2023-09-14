@@ -9,7 +9,7 @@
         <p class="mb-4">Join 60,000+ product managers receiving monthly updates on:</p>
         <ul>
           <li v-for="item in items" :key="item.message" class="flex items-stretch text-sm mb-2">
-            <img class="mr-2" src="@/assets/NewsletterSignUpForm/images/icon-list.svg" alt=""> {{ item.message }}
+            <img class="mr-2" src="@/assets/NewsletterSignUpForm/images/icon-list.svg" alt="item in the list of messages that will be received"> {{ item.message }}
           </li>
         </ul>
 
@@ -25,7 +25,7 @@
         <div :class="{ error: v$.email.$errors.length }">
           <input type="text" placeholder="email@company.com" v-model="state.email"
             class="outline-0 border w-full h-12 rounded-lg border-inherit p-3.5 mb-4"
-            :class="[v$.email.$errors.length > 0 ? 'bg-[#ff44442a] border-newsletter-dark-slate-grey placeholder-newsletter-dark-slate-grey' : 'border-newsletter-grey placeholder-newsletter-grey']">
+            :class="v$.email.$errors.length > 0 ? 'bg-[#ff44442a] border-newsletter-dark-slate-grey placeholder-newsletter-dark-slate-grey' : 'border-newsletter-grey placeholder-newsletter-grey'">
         </div>
 
         <button @click.prevent="subscribe"
@@ -35,13 +35,10 @@
       </div>
       <div>
         <img class="hidden md:block" src="@/assets/NewsletterSignUpForm/images/illustration-sign-up-desktop.svg">
-        <!-- <img class="block md:hidden rounded-2xl" src="@/assets/NewsletterSignUpForm/images/illustration-sign-up-mobile.svg"> -->
       </div>
     </div>
   </div>
-  <template v-else>
-    <NewsletterSuccess :email="state.email" @dismiss="subscribed = false" />
-  </template>
+  <NewsletterSuccess v-else :email="state.email" @dismiss="subscribed = false" />
 </template>
 
 <script>
@@ -62,12 +59,14 @@ export default {
       email: ''
     })
 
+    const emailValidationRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
     const rules = computed(() => {
       return {
         email: {
           required: helpers.withMessage('Please insert your email below', required),
           emailPattern: helpers.withMessage('Invalid email format', (value) =>
-            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
+            emailValidationRegex.test(value)
           )
         },
       }
@@ -75,14 +74,14 @@ export default {
 
     const v$ = useVuelidate(rules, state)
 
-    const items = ([
+    const items = [
       { message: "Product discovery and building what matters" },
       { message: "Measuring to ensure updates are a success" },
       { message: "And much more!" },
-    ])
+    ]
 
     async function subscribe() {
-      const invalid = await v$.value.$validate().then(valid /* true ou false */ => valid === false)
+      const invalid = await v$.value.$validate().then(valid => valid === false)
 
       if (invalid) return;
 
