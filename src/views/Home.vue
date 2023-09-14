@@ -5,16 +5,23 @@
   </div>
   <div class="flex flex-col items-center">
     <h1 class="mt-8 text-2xl tracking-wide">Desafios do Frontend Mentor</h1>
-    <ul class="flex items-center m-auto mb-4 md:mb-0 justify-between tracking-wide">
+    <ul class="flex items-center m-auto mb-4 md:mb-0 tracking-wide">
       <li>ipsum</li>
       <li>ipsum</li>
       <li>ipsum</li>
       <li>ipsum</li>
     </ul>
   </div>
-  <div class="flex flex-row items-center md:p-8">
-    <Card v-for="card in cards" :title="card.title" :description="card.description" :key="card.title" :to="card.to"
-      :image="card.image" />
+
+  <div class="m-0 cursor-pointer">
+    <div class="flex flex-row items-center justify-around m-0">
+      <Card v-for="card in cards" :title="card.title" :description="card.description" :key="card.title" :to="card.to"
+        :image="card.image" />
+    </div>
+    <div class="ml-2 mt-0">
+      <a href="">Ver Mais</a>
+      <v-icon class="m-0" name="bi-arrow-right-short" />
+    </div>
   </div>
   <Footer />
 </template>

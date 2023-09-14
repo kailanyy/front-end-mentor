@@ -4,9 +4,9 @@ import App from './App.vue'
 import router from '@/router/router'
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { MdClearRound, MdDensitymediumRound } from "oh-vue-icons/icons";
+import { MdClearRound, MdDensitymediumRound, BiArrowRightShort } from "oh-vue-icons/icons";
 
-addIcons(MdClearRound, MdDensitymediumRound);
+addIcons(MdClearRound, MdDensitymediumRound, BiArrowRightShort);
 
 
 const app = createApp(App).use(router)

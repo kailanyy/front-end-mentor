@@ -1,11 +1,11 @@
 <template>
-  <div class="card flex flex-row items-center m-4 p-4 rounded-2xl">
+  <div class="card flex flex-row items-center rounded-2xl">
     <div @click="toggleModal = !toggleModal" class="cards">
       <h2 class="title-card highlight md:text-2xl font-bold">{{ title }}</h2>
       <p class="text-md text-card">{{ description }}</p>
     </div>
 
-    <img :src="image" class="md:w-72 w-36 rounded-lg shadow-lg">
+    <img :src="image" class="md:w-72 w-40 shadow-lg">
 
     <div v-if="toggleModal"
       class="p-8 fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50 drop-shadow-md">
@@ -91,22 +91,4 @@ p,
   width: 100%;
 }
 
-/* .title-card:hover:after,
-.title-card:hover {
-  transform: scaleX(1);
-}
-
-.title-card:after {
-  transition: 0.25s ease;
-  content: "";
-  display: block;
-  width: 33%;
-  height: 20px;
-  background-color: #d41d6c;
-  transform: scaleY(0);
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  opacity: 30%;
-} */
 </style>
