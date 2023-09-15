@@ -3,8 +3,8 @@
 
 <template>
   <div>
-    <router-link :to="{name: 'home'}">home</router-link>
-    <router-link :to="{name: 'about'}">about</router-link>
+    <!-- <router-link :to="{name: 'home'}">home</router-link>
+    <router-link :to="{name: 'about'}">about</router-link> -->
   </div>
   <router-view /> <!-- <Home /> -->
 </template>

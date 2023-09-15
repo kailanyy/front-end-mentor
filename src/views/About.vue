@@ -1,10 +1,12 @@
 <template>
-  <p>About view</p>
+  <newsletter-success />
 </template>
 
 <script>
-export default {
+import NewsletterSuccess from '../components/NewsletterSignUpForm/NewsletterSuccess.vue'
 
+export default {
+  components: { NewsletterSuccess }
 }
 </script>
 
