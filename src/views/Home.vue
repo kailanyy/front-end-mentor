@@ -12,7 +12,7 @@
       <li>ipsum</li>
     </ul>
   </div>
-  <div class="flex flex-row items-center md:p-8">
+  <div class="flex md:flex-row flex-col items-center md:p-8">
     <Card v-for="card in cards" :title="card.title" :description="card.description" :key="card.title" :to="card.to"
       :image="card.image" />
   </div>
