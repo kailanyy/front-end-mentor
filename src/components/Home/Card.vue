@@ -1,11 +1,11 @@
 <template>
   <div class="flex">
-    <div class="card flex flex-row items-center m-4 p-4 rounded-2xl cursor-pointer" @click="openModal = true">
+    <div class="card flex md:flex-row items-center m-4 p-4 rounded-2xl cursor-pointer hover:drop-shadow-md hover:translate-y-1 duration-100" @click="openModal = true">
       <div class="cards">
         <h2 class="title-card highlight md:text-2xl font-bold">{{ title }}</h2>
         <p class="text-md text-card">{{ description }}</p>
       </div>
-      <img :src="image" class="md:w-72 w-36 rounded-lg shadow-lg">
+      <img :src="image" class="md:w-72 w-36 rounded-lg shadow-lg max-w-screen-sm">
     </div>
 
     <div v-if="openModal" class="fixed flex top-64 justify-center items-center drop-shadow-md z-50">
