@@ -1,12 +1,13 @@
 <template>
-  <NewsletterSignUpForm />
+  <CrowdfundingProductPageMain />
 </template>
 
 <script>
-import NewsletterSignUpForm from '../components/NewsletterSignUpForm/NewsletterSignUpForm.vue';
+// import NewsletterSignUpForm from '../components/NewsletterSignUpForm/NewsletterSignUpForm.vue';
+import CrowdfundingProductPageMain from '../components/crowdfunding-product-page-main/CrowdfundingProductPageMain.vue';
 
 export default {
-  components: { NewsletterSignUpForm }
+  components: { CrowdfundingProductPageMain }
 }
 </script>
 
