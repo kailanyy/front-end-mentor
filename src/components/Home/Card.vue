@@ -1,11 +1,13 @@
 <template>
   <div class="flex">
-    <div class="card flex md:flex-row items-center m-4 p-4 rounded-2xl cursor-pointer hover:drop-shadow-md hover:translate-y-1 duration-100" @click="openModal = true">
+    <div
+      class="card flex md:flex-row items-center border-2 border-[#617f66] m-4 p-4 cursor-pointer hover:translate-y-1 duration-100 max-w-md min-h-[217.99px]"
+      @click="openModal = true">
       <div class="cards">
-        <h2 class="title-card highlight md:text-2xl font-bold">{{ title }}</h2>
+        <h2 class="title-card text-[#617f66] highlight md:text-2xl font-bold">{{ title }}</h2>
         <p class="text-md text-card">{{ description }}</p>
       </div>
-      <img :src="image" class="md:w-72 w-36 rounded-lg shadow-lg max-w-screen-sm">
+      <img :src="image" class="md:w-52 w-36 rounded-lg max-w-screen-sm">
     </div>
 
     <div v-if="openModal" class="fixed flex top-64 justify-center items-center drop-shadow-md z-50">
@@ -55,7 +57,6 @@ div h2,
 p,
 .title-card {
   font-family: 'Inter-Regular';
-  color: #1B0811;
 }
 
 .text-card {
@@ -65,10 +66,14 @@ p,
 .card,
 .text-card,
 .title-card {
-  background-color: #f4ebf0;
+  background-color: #f4ebf01c;
 }
 
-.highlight {
+.card:hover {
+  background-color: #617f66;
+}
+
+/* .highlight {
   z-index: 5;
   position: relative;
   display: flex;
@@ -92,24 +97,5 @@ p,
   transition: all 0.3s ease;
   height: 50%;
   width: 100%;
-}
-
-/* .title-card:hover:after,
-.title-card:hover {
-  transform: scaleX(1);
-}
-
-.title-card:after {
-  transition: 0.25s ease;
-  content: "";
-  display: block;
-  width: 33%;
-  height: 20px;
-  background-color: #d41d6c;
-  transform: scaleY(0);
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  opacity: 30%;
 } */
 </style>

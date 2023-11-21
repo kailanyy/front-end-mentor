@@ -12,13 +12,13 @@
   font-family: "Roboto";
   src: local("Roboto"),
     url(./assets/NewsletterSignUpForm/fonts/Roboto-Bold.ttf) format("truetype");
-  font-weight: bold; /* 700 */
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "Roboto";
   src: local("Roboto"),
     url(./assets/NewsletterSignUpForm/fonts/Roboto-Regular.ttf) format("truetype");
-  font-weight: normal; /* 400 */
+  font-weight: normal;
 }
 </style>
