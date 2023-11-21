@@ -1,6 +1,8 @@
 <template>
   <div class="flex">
-    <div class="card flex md:flex-row items-center m-4 p-4 rounded-2xl cursor-pointer hover:drop-shadow-md hover:translate-y-1 duration-100" @click="openModal = true">
+    <div
+      class="card flex md:flex-row items-center m-4 p-4 rounded-2xl cursor-pointer hover:drop-shadow-md hover:translate-y-1 duration-100"
+      @click="openModal = true">
       <div class="cards">
         <h2 class="title-card highlight md:text-2xl font-bold">{{ title }}</h2>
         <p class="text-md text-card">{{ description }}</p>
@@ -68,7 +70,7 @@ p,
   background-color: #f4ebf0;
 }
 
-.highlight {
+/* .highlight {
   z-index: 5;
   position: relative;
   display: flex;
@@ -92,7 +94,7 @@ p,
   transition: all 0.3s ease;
   height: 50%;
   width: 100%;
-}
+} */
 
 /* .title-card:hover:after,
 .title-card:hover {
