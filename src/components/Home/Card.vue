@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <div
+    <router-link :to="{ name: 'NewsletterSignUpForm' }"
       class="card flex md:flex-row items-center border-2 border-[#617f66] m-4 p-4 cursor-pointer hover:translate-y-1 duration-100 max-w-md min-h-[217.99px]"
       @click="openModal = true">
       <div class="cards">
@@ -8,24 +8,7 @@
         <p class="text-md text-card">{{ description }}</p>
       </div>
       <img :src="image" class="md:w-52 w-36 rounded-lg max-w-screen-sm">
-    </div>
-
-    <div v-if="openModal" class="fixed flex top-64 justify-center items-center drop-shadow-md z-50">
-      <div class="flex md:flex-row flex-col items-center rounded shadow-2xl bg-white opacity-100">
-        <div class="flex flex-col w-full md:w-auto items-end mr-4 md:mr-0">
-          <v-icon name="md-clear-round" fill="black" class="cursor-pointer mt-2" @click="closeModal" />
-        </div>
-        <img :src="image" class="p-4 w-80">
-        <p class="text-2xl font-bold text-center">Header Text</p>
-        <span class="m-4 md:m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-        <router-link :to="{ name: 'about' }"
-          class="rounded-md bg-gray-500 hover:bg-emerald-500 duration-200 text-white px-4 mt-4 mb-3">
-          Button
-        </router-link>
-      </div>
-    </div>
-    <div @click="closeModal" v-if="openModal" class="w-full h-full top-0 left-0 z-10 absolute bg-black opacity-30"></div>
+    </router-link>
   </div>
 </template>
 
@@ -72,30 +55,4 @@ p,
 .card:hover {
   background-color: #617f66;
 }
-
-/* .highlight {
-  z-index: 5;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.highlight::before {
-  content: "";
-  height: 30%;
-  width: 100%;
-  display: block;
-  z-index: -5;
-  opacity: 30%;
-  position: absolute;
-  transition: all 0.3s ease;
-  background: #d41d6c;
-}
-
-.cards:hover>.highlight::before {
-  transition: all 0.3s ease;
-  height: 50%;
-  width: 100%;
-} */
 </style>
