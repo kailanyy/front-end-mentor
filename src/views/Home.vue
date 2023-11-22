@@ -11,26 +11,27 @@
       <li>ipsum</li>
       <li>ipsum</li>
     </ul>
-  </div>
-  <div class="flex md:flex-row flex-col items-center md:p-8">
-    <Card v-for="card in cards" :title="card.title" :description="card.description" :key="card.title" :to="card.to"
-      :image="card.image" />
+    <div class="flex md:flex-row flex-col items-center md:p-8">
+      <Card v-for="card in cards" :title="card.title" :description="card.description" :key="card.title" :to="card.to"
+        :image="card.image" />
+    </div>
   </div>
   <Footer />
 </template>
 
 <script>
 import Card from "../components/Home/Card.vue";
-import image from '../assets/NewsletterSignUpForm/images/desktop-design.jpg'
+import imageNewsletter from '../assets/NewsletterSignUpForm/images/image-newsletter.png'
 import Header from "./Header.vue";
 import Footer from './Footer.vue';
+import imgCrowdfundingpage from "../assets/NewsletterSignUpForm/images/image-crowdfundingpage.png"
 
 export default {
   components: { Card, Header, Footer },
   setup() {
     const cards = ([
-      { title: 'Newsletter sign-up form', description: 'Formulário de inscrição para recebimento de e-mails', to: 'about', image: image },
-      { title: 'Em construção', description: 'Mais desafios estão sendo desenvolvidos enquanto você lê isso aqui :)', to: 'about', image: image },
+      { title: 'Newsletter sign-up form', description: 'Formulário de inscrição para recebimento de e-mails', to: 'about', image: imageNewsletter },
+      { title: 'Crowdfunding product page', description: 'Formulário de inscrição para recebimento de e-mails', to: 'about', image: imgCrowdfundingpage },
     ])
     return { cards }
   }
@@ -61,7 +62,7 @@ ul li {
 
 ul li:hover,
 span:hover {
-  color: #d41d6c;
+  color: #617f66;
   cursor: pointer;
 }
 
@@ -76,7 +77,7 @@ ul li::after {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #d41d6c;
+  background-color: #617f66;
   transform: scaleX(0);
   position: absolute;
   bottom: 0px;

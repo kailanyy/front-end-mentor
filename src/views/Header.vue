@@ -1,7 +1,7 @@
 <template>
-  <header class="mb-8 mt-4">
+  <header class="mb-8 m-0 p-4 bg-[#617f66] text-white">
     <h1 class="pl-8">Kailany Souza</h1>
-    <nav>
+    <nav class="text-white">
       <a href="">contato</a>
     </nav>
   </header>
@@ -43,10 +43,6 @@ export default {
   src: url('../assets/NewsletterSignUpForm/fonts/Inter-Thin.ttf') format('truetype')
 }
 
-* {
-  margin: 10px;
-}
-
 header,
 nav {
   transition: opacity .2s ease-in-out;
@@ -63,7 +59,6 @@ header h1 {
 }
 
 nav a:hover {
-  color: #d41d6c;
   cursor: pointer;
 }
 </style>
