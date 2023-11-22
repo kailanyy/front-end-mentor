@@ -30,8 +30,8 @@ export default {
   components: { Card, Header, Footer },
   setup() {
     const cards = ([
-      { title: 'Newsletter sign-up form', description: 'Formulário de inscrição para recebimento de e-mails', to: 'about', image: imageNewsletter },
-      { title: 'Crowdfunding product page', description: 'Formulário de inscrição para recebimento de e-mails', to: 'about', image: imgCrowdfundingpage },
+      { title: 'Newsletter sign-up form', description: 'Formulário de inscrição para recebimento de e-mails', to: 'NewsletterSignUpForm', image: imageNewsletter },
+      { title: 'Crowdfunding product page', description: 'Formulário de inscrição para recebimento de e-mails', to: 'CrowdfundingProduct', image: imgCrowdfundingpage },
     ])
     return { cards }
   }

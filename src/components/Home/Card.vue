@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <router-link :to="{ name: 'NewsletterSignUpForm' }"
+    <router-link :to="to"
       class="card flex md:flex-row items-center border-2 border-[#617f66] m-4 p-4 cursor-pointer hover:translate-y-1 duration-100 max-w-md min-h-[217.99px]"
       @click="openModal = true">
       <div class="cards">
