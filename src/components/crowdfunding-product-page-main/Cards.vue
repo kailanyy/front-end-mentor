@@ -1,6 +1,6 @@
 <template>
   <div class="border-2 rounded-md p-7 mb-4" v-for=" card in cards " :key="card.title">
-    <div class="flex sm:flex-col justify-between mb-6">
+    <div class="flex sm:flex-col md:flex-row justify-between mb-6">
       <h1 class="font-commissionerBold ">
         {{ card.title }}
       </h1>
@@ -11,7 +11,7 @@
     <p class="text-sm text-dark-gray">
       {{ card.description }}
     </p>
-    <div class="flex sm:flex-col justify-between mt-6">
+    <div class="flex md:flex-row sm:flex-col justify-between mt-6">
       <h1 class="font-commissionerBold text-2xl sm:mb-4">
         {{ card.amount }}
         <span class="font-commissionerRegular text-dark-gray text-sm">

@@ -4,7 +4,7 @@
       src="./starter/images/icon-hamburger.svg">
     <img v-else @click="toggle" class="md:hidden sm:block cursor-pointer" src="./starter/images/icon-close-menu.svg">
     <div v-show="dropdownActive"
-      class="bg-white text-black font-commissionerRegular z-50 flex flex-col justify-center absolute rounded-md shadow-md h-[150px] w-[200px] right-0 top-10">
+      class=" bg-white m-0 max-w-[95%] left-[50%] ml-[-47.5%] text-black font-commissionerRegular w-full h-[150px] z-50 flex flex-col justify-center absolute rounded-md shadow-md  right-0 top-10">
       <slot />
     </div>
   </div>
