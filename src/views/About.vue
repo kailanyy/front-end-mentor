@@ -1,12 +1,13 @@
 <template>
-  <newsletter-success />
+  <CrowdfundingProductPageMain />
 </template>
 
 <script>
-import NewsletterSuccess from '../components/NewsletterSignUpForm/NewsletterSuccess.vue'
+// import NewsletterSignUpForm from '../components/NewsletterSignUpForm/NewsletterSignUpForm.vue';
+import CrowdfundingProductPageMain from '../components/crowdfunding-product-page-main/CrowdfundingProductPageMain.vue';
 
 export default {
-  components: { NewsletterSuccess }
+  components: { CrowdfundingProductPageMain }
 }
 </script>
 
