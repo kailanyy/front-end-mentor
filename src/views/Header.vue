@@ -1,7 +1,7 @@
 <template>
   <header class="mb-8 m-0 p-4 bg-[#617f66] text-white">
     <h1 class="pl-8">Kailany Souza</h1>
-    <nav class="text-white">
+    <nav class="flex justify-items-end items-center text-white font-InterSemiBold tracking-[1px]">
       <a href="">contato</a>
     </nav>
   </header>
@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @font-face {
   font-family: 'Inter-Light';
   src: url('../assets/NewsletterSignUpForm/fonts/Inter-Light.ttf') format('truetype')
@@ -41,17 +41,6 @@ export default {
 @font-face {
   font-family: 'Inter-Thin';
   src: url('../assets/NewsletterSignUpForm/fonts/Inter-Thin.ttf') format('truetype')
-}
-
-header,
-nav {
-  transition: opacity .2s ease-in-out;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  letter-spacing: 1px;
-  font-family: 'Inter-SemiBold';
-  color: #1B0811;
 }
 
 header h1 {

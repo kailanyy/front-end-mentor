@@ -9,6 +9,9 @@ export default {
     extend: {
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
+        InterRegular: ["Inter-Regular"],
+        InterLight: ["Inter-Light"],
+        InterSemiBold: ["Inter-SemiBold"],
       },
       screens: {
         sm: '300px'
@@ -18,7 +21,8 @@ export default {
         'newsletter-charcoal-grey': '#36384e',
         'newsletter-grey': '#9294a0',
         'newsletter-white': '#ffffff',
-        'newsletter-tomato': '#ff6257'
+        'newsletter-tomato': '#ff6257',
+        'card-home': '#f4ebf01c'
       },
     },
   },

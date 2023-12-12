@@ -1,11 +1,11 @@
 <template>
   <Header />
   <div class="p-8">
-    <p class="text-xl text-center">Desenvolvedora Full-Stack</p>
+    <p class="text-xl text-center font-InterLight">Desenvolvedora Full-Stack</p>
   </div>
   <div class="flex flex-col items-center">
-    <h1 class="mt-8 text-2xl tracking-wide">Desafios do Frontend Mentor</h1>
-    <ul class="flex items-center m-auto mb-4 md:mb-0 justify-between tracking-wide">
+    <h1 class="mt-8 text-2xl tracking-wide font-InterRegular">Desafios do Frontend Mentor</h1>
+    <ul class="flex font-InterLight items-center m-auto mb-4 md:mb-0 justify-between tracking-wide">
       <li>ipsum</li>
       <li>ipsum</li>
       <li>ipsum</li>
@@ -30,8 +30,8 @@ export default {
   components: { Card, Header, Footer },
   setup() {
     const cards = ([
-      { title: 'Newsletter sign-up form', description: 'Formulário de inscrição para recebimento de e-mails', to: 'about', image: imageNewsletter },
-      { title: 'Crowdfunding product page', description: 'Formulário de inscrição para recebimento de e-mails', to: 'about', image: imgCrowdfundingpage },
+      { title: 'Newsletter sign-up form', description: 'Formulário de inscrição para recebimento de e-mails', to: 'NewsletterSignUpForm', image: imageNewsletter },
+      { title: 'Crowdfunding product page', description: 'Formulário de inscrição para recebimento de e-mails', to: 'CrowdfundingProduct', image: imgCrowdfundingpage },
     ])
     return { cards }
   }
@@ -39,23 +39,6 @@ export default {
 </script>
 
 <style scoped>
-ul li {
-  width: min-content;
-}
-
-h1,
-h2 {
-  font-family: 'Inter-Regular';
-  color: #1B0811;
-}
-
-p,
-ul li {
-  font-family: 'Inter-Light';
-  color: #1B0811;
-}
-
-nav a,
 ul li {
   margin-right: 20px;
 }
