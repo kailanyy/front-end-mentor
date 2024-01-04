@@ -1,19 +1,18 @@
 <template>
-  <div class="flex">
+  <transition name="slide">
     <router-link :to="to"
-      class="card bg-card-home flex md:flex-row items-center border-2 border-[#617f66] m-4 p-4 cursor-pointer hover:translate-y-1 duration-100 max-w-md min-h-[217.99px]"
+      class="flex md:flex-col items-center w-5/12 h-full p-2 bg-[#F5F5F5] drop-shadow-sm duration-100 min-h-[217.99px]"
       @click="openModal = true">
-      <div class="cards font-InterRegular bg-card-home">
-        <h2 class="title-card bg-card-home text-[#617f66] highlight md:text-2xl font-bold">{{ title }}</h2>
-        <p class="text-md font-InterLight">{{ description }}</p>
+      <h2 class="title-card text-black highlight md:text-3xl font-bold font-SpaceMonoRegular">{{ title }}</h2>
+      <div class="flex justify-center text-center">
+        <p class="text-md p-2 mt-4 w-9/12 mb-4 font-SpaceMonoRegular">{{ description }}</p>
       </div>
-      <img :src="image" class="md:w-52 w-36 rounded-lg max-w-screen-sm">
+      <img :src="image" class="w-3/4 rounded-lg md:mt-0">
     </router-link>
-  </div>
+  </transition>
 </template>
 
 <script>
-import NewsletterSignUpForm from '../NewsletterSignUpForm/NewsletterSignUpForm.vue';
 import { ref } from 'vue';
 
 export default {
@@ -21,7 +20,7 @@ export default {
     title: '',
     description: '',
     to: '',
-    image: ''
+    image: '',
   },
   setup() {
     const openModal = ref(false);
@@ -30,13 +29,19 @@ export default {
       openModal.value = false;
     }
 
-    return { NewsletterSignUpForm, openModal, closeModal }
+    return { openModal, closeModal }
   }
 }
 </script>
 
 <style scoped>
-.card:hover {
-  background-color: #617f66;
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.5s;
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translateY(20px);
 }
 </style>

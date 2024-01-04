@@ -12,6 +12,9 @@ export default {
         InterRegular: ["Inter-Regular"],
         InterLight: ["Inter-Light"],
         InterSemiBold: ["Inter-SemiBold"],
+        PoppinsRegular: ["Poppins-Regular"],
+        SpaceMonoRegular: ["SpaceMono-Regular"],
+        SpaceMonoBold: ["SpaceMono-Bold"],
       },
       screens: {
         sm: '300px'
