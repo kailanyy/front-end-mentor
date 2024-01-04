@@ -70,6 +70,12 @@ export default {
       showBackToTop: true,
       cards: [
         {
+          title: 'Room homepage',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium sollicitudin ultrices.',
+          to: 'RoomHomepageMaster',
+          image: imageNewsletter,
+        },
+        {
           title: 'Newsletter sign-up form',
           description: 'Formulário de inscrição para recebimento de e-mails',
           to: 'NewsletterSignUpForm',

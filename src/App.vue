@@ -57,4 +57,9 @@
   font-family: 'SpaceMono-Bold';
   src: local("SpaceMono-Bold"), url('./assets/NewsletterSignUpForm/fonts/SpaceMono-Bold.ttf') format('truetype')
 }
+
+@font-face {
+  font-family: 'LeagueSpartan-Regular';
+  src: local("LeagueSpartan-Regular"), url('./components/RoomHomepageMaster/assets/fonts/LeagueSpartan-Regular.ttf') format('truetype')
+}
 </style>

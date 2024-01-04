@@ -15,6 +15,7 @@ export default {
         PoppinsRegular: ["Poppins-Regular"],
         SpaceMonoRegular: ["SpaceMono-Regular"],
         SpaceMonoBold: ["SpaceMono-Bold"],
+        LeagueSpartanRegular: ["LeagueSpartan-Regular"],
       },
       screens: {
         sm: '300px'
@@ -25,7 +26,9 @@ export default {
         'newsletter-grey': '#9294a0',
         'newsletter-white': '#ffffff',
         'newsletter-tomato': '#ff6257',
-        'card-home': '#f4ebf01c'
+        'card-home': '#f4ebf01c',
+        'dark-gray': '#a1a1a1',
+        'very-dark-gray':'#454545',
       },
     },
   },
