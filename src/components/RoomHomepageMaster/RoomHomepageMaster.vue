@@ -1,34 +1,44 @@
 <template>
   <div :key="currentIndex">
-    <div class="grid grid-cols-2">
+    <div class="md:grid md:grid-cols-2 sm:flex sm:flex-col">
       <div class="relative">
-        <Header />
-        <img :src="section[currentIndex].slide" alt="" class="w-full h-auto" />
+        <Header class="z-50" />
+        <div class="relative cursor-pointer flex">
+          <img :src="section[currentIndex].slide" alt="" class="w-full h-auto" />
+          <ul class="right-0 -bottom-0 flex absolute">
+            <li>
+              <button @click="prevSection"
+                class="bg-black hover:bg-very-dark-gray w-[30px] h-[50px] items-center justify-center flex"><img
+                  src="./assets/images/icon-angle-left.svg" alt="">
+              </button>
+            </li>
+            <li>
+              <button @click="nextSection"
+                class="bg-black hover:bg-very-dark-gray w-[30px] h-[50px] items-center justify-center flex"><img
+                  src="./assets/images/icon-angle-right.svg" alt="">
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
       <section class="flex flex-col items-center justify-center font-LeagueSpartan">
-        <div class="w-[60%]">
-          <h1 class="font-bold text-4xl mb-4 w-[80%]">{{ section[currentIndex].title }}</h1>
+        <div class="w-[60%] sm:w-[100%] sm:p-[8%]">
+          <h1 class="font-bold text-4xl mb-4 w-[80%] sm:w-[100%]">{{ section[currentIndex].title }}</h1>
           <p class="text-dark-gray text-sm font-medium">
             {{ section[currentIndex].description }}
           </p>
-          <div class="flex items-center">
-            <span class="uppercase tracking-[10px] font-bold mr-4 mt-4">Shop now</span>
-            <img src="./assets/images/icon-arrow.svg" alt="">
-          </div>
-          <div class="flex bg-black w-fit absolute left-[50%] top-[59%] cursor-pointer ">
-            <img @click="prevSection" class="m-[3.6vh] hover:bg-very-dark-gray" src="./assets/images/icon-angle-left.svg"
-              alt="">
-            <img @click="nextSection" class="m-[3.6vh] hover:bg-very-dark-gray" src="./assets/images/icon-angle-right.svg"
-              alt="">
-          </div>
+          <button class="flex items-center mt-4 cursor-pointer uppercase tracking-[10px] font-bold mr-4 hover:opacity-75">
+            Shop now
+            <img src="./assets/images/icon-arrow.svg" class="hover:text-dark-gray" alt="">
+          </button>
         </div>
       </section>
     </div>
-    <section class="flex justify-center">
+    <section class="flex justify-center sm:flex-col md:flex-row sm:mt-8 md:mt-0">
       <img src="./assets/images/image-about-dark.jpg" alt="">
-      <div class="m-[3%]">
-        <h1 class="font-bold text-md uppercase mb-2 tracking-[8px]">About our furniture</h1>
-        <p class="text-dark-gray text-sm font-medium w-[85%]">
+      <div class="m-[3%] sm:p-[8%] md:p-0">
+        <h1 class="font-bold text-md uppercase mb-2 tracking-[8px] sm:tracking-widest">About our furniture</h1>
+        <p class="text-dark-gray text-sm font-medium w-[85%] sm:w-[100%]">
           Our multifunctional collection blends design and function to suit your individual taste.
           Make each room unique, or pick a cohesive theme that best express your interests and what
           inspires you. Find the furniture pieces you need, from traditional to contemporary styles
